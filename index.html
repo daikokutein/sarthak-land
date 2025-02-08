@@ -3,254 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎵 Humba Humba Time 🎵</title>
+    <title>Humba Humba</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Center content properly */
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            margin: 0;
+            padding: 70px;
             min-height: 100vh;
-            background: linear-gradient(135deg, #2c2c2c 0%, #444242 100%);
-            overflow-x: hidden;
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            position: relative;
+            background-color: #444242;
         }
 
-        .container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        h1 {
+        /* Main video styling */
+        .ma {
+            border-radius: 5px;
+            border: 8px solid #000000;
+            width: 96%;  
+            max-width: 800px; 
+            height: auto;
+            display: block;
+            margin-top: 100px;
             position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 4.5rem;
-            font-weight: 900;
+            right: 1px;
+        }
+
+        /* Small floating video */
+        .mo {
+            border: 8px solid #000000;
+            border-radius: 5px;
+            width: 300px;
+            height: auto;
+            position: fixed;
+            top: 450px;
+            right: 1px;
+        }
+        h1{
+ 
+            position: fixed;
+            font-family: Impact, Arial Black, sans-serif;
+            font-size: 48px;
+            font-weight: bold;
             text-transform: uppercase;
             color: white;
             text-align: center;
-            text-shadow: 
-                4px 4px 0px #000,
-                -4px -4px 0px #000,
-                4px -4px 0px #000,
-                -4px 4px 0px #000,
-                0px 4px 8px rgba(0, 0, 0, 0.5);
-            z-index: 100;
-            animation: crazyDance 2s infinite;
-        }
-
-        .subtitle {
-            position: fixed;
-            top: 90px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ff69b4;
-            font-size: 1.2rem;
-            text-align: center;
-            z-index: 100;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: blink 1s infinite;
-        }
-
-        .ma {
-            width: 90%;
-            max-width: 1000px;
-            height: auto;
-            border: 12px solid #000000;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-            position: relative;
-            margin: 150px auto 20px auto;
-        }
-
-        .mo {
-            width: 320px;
-            height: auto;
-            border: 8px solid #000000;
-            border-radius: 10px;
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            z-index: 10;
-            animation: floatAndSpin 4s ease-in-out infinite;
-        }
-
-        @keyframes crazyDance {
-            0% { transform: translateX(-50%) rotate(0deg); }
-            25% { transform: translateX(-50%) rotate(-5deg); }
-            75% { transform: translateX(-50%) rotate(5deg); }
-            100% { transform: translateX(-50%) rotate(0deg); }
-        }
-
-        @keyframes floatAndSpin {
-            0% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-            50% { transform: translateX(-50%) translateY(-15px) rotate(3deg); }
-            100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .party-mode {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            animation: partyLights 4s infinite;
-            opacity: 0.1;
-        }
-
-        @keyframes partyLights {
-            0% { background: red; }
-            33% { background: blue; }
-            66% { background: green; }
-            100% { background: red; }
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-                top: 10px;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-                top: 60px;
-            }
-
-            .mo {
-                width: 200px;
-                bottom: 10px;
-            }
-
-            .ma {
-                margin-top: 100px;
-                border-width: 8px;
-            }
-        }
-
-        /* Fun error message styling */
-        .error-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.8);
-            color: #ff69b4;
-            padding: 20px;
-            border-radius: 10px;
-            display: none;
-            z-index: 1000;
-            text-align: center;
-            animation: shake 0.5s infinite;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translate(-50%, -50%); }
-            25% { transform: translate(-52%, -50%); }
-            75% { transform: translate(-48%, -50%); }
+            text-shadow: 4px 4px 0px black, -4px -4px 0px black, 
+                         4px -4px 0px black, -4px 4px 0px black;
         }
     </style>
 </head>
 <body>
-    <div class="party-mode"></div>
-    
     <h1>HUMBA HUMBA</h1>
-    <div class="subtitle">🎵 Prepare your ears for greatness! 🎵</div>
-
-    <div class="container">
-        <video class="ma" id="myVideo" loop playsinline>
+    <div>
+        <video class="ma" id="myVideo" autoplay loop>
             <source src="ma.mp4" type="video/mp4">
         </video>
     </div>
 
-    <video class="mo" loop playsinline>
+    <video class="mo" autoplay muted loop>
         <source src="mo.mp4" type="video/mp4">
     </video>
 
-    <div class="error-message" id="errorMessage">
-        Oh snap! Your browser is being boring. 
-        <br>Click anywhere to unleash the HUMBA!
-    </div>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mainVideo = document.getElementById('myVideo');
-            const allVideos = document.querySelectorAll('video');
-            const errorMessage = document.getElementById('errorMessage');
-
-            // Function to handle autoplay with sound
-            async function initializeVideos() {
-                try {
-                    // Create a temporary audio context to bypass browser restrictions
-                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                    await audioContext.resume();
-
-                    // Start all videos with sound
-                    allVideos.forEach(video => {
-                        video.muted = false;
-                        video.play().catch(error => {
-                            console.log("Autoplay failed:", error);
-                            errorMessage.style.display = 'block';
-                        });
-                    });
-                } catch (error) {
-                    console.log("Audio initialization failed:", error);
-                    errorMessage.style.display = 'block';
-                }
+        document.addEventListener("click", function () {
+            let video = document.getElementById("myVideo");
+            if (video.paused) {
+                video.play();
             }
-
-            // Try to initialize videos immediately
-            initializeVideos();
-
-            // Backup click handler for browsers that block autoplay
-            document.addEventListener('click', function() {
-                allVideos.forEach(video => {
-                    video.muted = false;
-                    video.play();
-                });
-                errorMessage.style.display = 'none';
-            });
-
-            // Easter egg: Double click for party mode
-            let partyInterval;
-            document.addEventListener('dblclick', function() {
-                const partyMode = document.querySelector('.party-mode');
-                if (partyMode.style.opacity === '0.3') {
-                    partyMode.style.opacity = '0.1';
-                    clearInterval(partyInterval);
-                } else {
-                    partyMode.style.opacity = '0.3';
-                    partyInterval = setInterval(() => {
-                        mainVideo.style.transform = `scale(${1 + Math.random() * 0.1})`;
-                    }, 500);
-                }
-            });
-        });
+        }, { once: true });
     </script>
 </body>
 </html>
